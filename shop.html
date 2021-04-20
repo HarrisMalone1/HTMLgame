@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="shop.css">
+		<script src="firstjavascript.js"></script>
+		<title>SHOP </title>
+	</head>
+	<body onload="essentials()">
+		<header>Town Shop</header>
+
+		<aside class="leftInv">Machete: <span id="machete"></span><br>Torch: <span id="torch"></span><br>GrappleHook: <span id="hook"></span><br>Explosives: <span id="explosive"></span></aside>
+
+		<p id="dialogBox"> David: Welcome back traveller, as you can see out shop is now open see anything you like? <br> </p>
+
+		<aside class="rightInv"> Coins: <br><span id="money"></span> </aside>
+
+		<h2 class="karma"> Karma : <span id="karmabar"></span> </h2>
+
+		<h2 class="health"> Health : <span id="healthbar"></span> </h2>
+
+
+		<button id="button1" onclick="buyHook()">Grapple Hook: 10 Coins</button>
+		<button id="button2" onclick="buyMachete()">Machete: 10 Coins</button>
+		<button id="button3" onclick="buyTorch()">Torch: 5 Coins</button>
+		<button id="button5" onclick="location.href='mainpage1.html'">Go Back</button>
+		<button id="button4" onclick="buyExplosive()">Explosives: 15 Coins</button>
+	</body>
+
+<html>

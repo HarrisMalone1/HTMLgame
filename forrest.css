@@ -1,6 +1,6 @@
 body {
-	background-color : #1a1a1a;
-    background-image: url(images/campsite.png);
+	background-color : #0f5722;  
+    background-image: url(images/forest.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 	}
@@ -15,9 +15,11 @@ header {
 h1 {
     text-align: center;
 }
+
 #money {
     font-size: 26px
 }
+
 p {
     text-shadow: white 0px 0px 10px;
 	color: yellow;
@@ -33,7 +35,7 @@ p {
     border-color: #821515;
     margin: 20px 10px 5px 10px;
     padding: 20px;
-    box-shadow: 0 0 15px 5px #b30c2b;
+    box-shadow: 0 0 15px 5px #18a83e;
 }
 aside {
     text-shadow: white 0px 0px 10px;
@@ -47,7 +49,7 @@ aside {
     margin-top: 20px;
     margin-bottom: 10px;
     padding: 20px;
-    box-shadow: 0 0 15px 5px #b30c2b;
+    box-shadow: 0 0 15px 5px #18a83e;
 }
 h2 {
     font-size: 16px;
@@ -73,7 +75,7 @@ button {
     border-radius: 25px;
     margin: 4px;
     padding: 15px;
-    box-shadow: 0 0 15px 5px #b30c2b;
+    box-shadow: 0 0 15px 5px #18a83e;
 
 }
 body{

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="clifftop.css">
+		<script src="firstjavascript.js"></script>
+		<title>Dungeon Master - Clifftop </title>
+	<head>
+	<body onload="essentials()" style="background-image: url('images/clifftop.jpg');">
+		<header>Clifftop</header>
+
+		<aside class="leftInv">Machete: <span id="machete"></span><br>Torch: <span id="torch"></span><br>GrappleHook: <span id="hook"></span><br>Explosives: <span id="explosive"></span></aside>
+
+		<p id="dialogBox"> You reach the top of the cliff just to realise theres not much up here. <br> But you can see what seems to be smoke in the distance. </p>
+
+		<aside class="rightInv"> Coins: <br><span id="money"></span> </aside>
+
+		<h2 class="karma"> Karma : <span id="karmabar"></span> </h2>
+		<h2 class="health"> Health : <span id="healthbar"></span> </h2>
+		<button id="button1" onclick="location.href='riverside.html'">Climb back down the mountain</button>
+		<button id="button2" onclick="button2cliff()">Investigate the Smoke</button>
+		<button id="button3" onclick="button3cliff()"></button>
+		<button id="button4" onclick="button4cliff()"></button>
+	</body>
+<html>

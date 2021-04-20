@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="forrest.css">
+		<script src="firstjavascript.js"></script>
+		<title>Dungeon Master - Riverside </title>
+	<head>
+	<body onload="essentials()">
+		<header>Riverside</header>
+
+		<aside class="leftInv">Machete: <span id="machete"></span><br>Torch: <span id="torch"></span><br>GrappleHook: <span id="hook"></span><br>Explosives: <span id="explosive"></span></aside>
+
+		<p id="dialogBox"> You are walking down the river when you notice a man lying at the bottom of a cliff who seems injured. <br> You approach the man... <br> Do you kill him and take what you want? <br> Or do you help him?</p>
+
+		<aside class="rightInv"> Coins: <br><span id="money"></span> </aside>
+
+		<h2 class="karma"> Karma : <span id="karmabar"></span> </h2>
+		<h2 class="health"> Health : <span id="healthbar"></span> </h2>
+		<button id="button1" onclick="killTraveller()">Kill Him</button>
+		<button id="button2" onclick="saveTraveller()">Help Him</button>
+		<button id="button3" onclick="climbMountain()">Scale the Mountain</button>
+		<button id="button4" onclick="location.href='forrest.html'">Go Back</button>
+	</body>
+<html>

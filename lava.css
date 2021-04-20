@@ -1,6 +1,6 @@
 body {
 	background-color : #1a1a1a;
-    background-image: url(images/campsite.png);
+    background-image: url(images/lava.png);
     background-repeat: no-repeat;
     background-size: cover;
 	}
@@ -15,9 +15,11 @@ header {
 h1 {
     text-align: center;
 }
+
 #money {
     font-size: 26px
 }
+
 p {
     text-shadow: white 0px 0px 10px;
 	color: yellow;
