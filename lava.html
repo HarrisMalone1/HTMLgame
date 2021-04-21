@@ -4,14 +4,23 @@
 		<link rel="stylesheet" type="text/css" href="lava.css">
 		<script src="firstjavascript.js"></script>
 		<title>Dungeon Master - Lava </title>
-		
-	<head>
+			<script>
+			document.addEventListener('click', musicPlay);
+			function musicPlay() {
+    			document.getElementById('lava').play();
+    			document.removeEventListener('click', musicPlay);
+			}</script>
+	</head>
 	<body onload="essentials()">
 		<header>Lava</header>
 
+		<audio id="lava" loop autoplay>
+   			 <source src="sounds/lava.wav" type="audio/wav">
+		</audio>
+
 		<aside class="leftInv">Machete: <span id="machete"></span><br>Torch: <span id="torch"></span><br>GrappleHook: <span id="hook"></span><br>Explosives: <span id="explosive"></span></aside>
 
-		<p id="dialogBox"> You've come to an oppening deep in the cave, the heat is immense. There seems to be two strwams of lava flowing down either side of you!<br>You can see some sort of huge rock on the path infront of you and no other way around. </p>
+		<p id="dialogBox"> You've come to an oppening deep in the cave, the heat is immense. There seems to be two streams of lava flowing down either side of you!<br>You can see some sort of huge rock on the path infront of you and no other way around. </p>
 
 		<aside class="rightInv"> Coins: <br><span id="money"></span> </aside>
 

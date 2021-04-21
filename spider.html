@@ -4,16 +4,26 @@
 		<link rel="stylesheet" type="text/css" href="spider.css">
 		<script src="firstjavascript.js"></script>
 		<title>Dungeon Master - Spider </title>
-		
-	<head>
+		<script>
+			document.addEventListener('click', musicPlay);
+			function musicPlay() {
+    			document.getElementById('spider').play();
+    			document.removeEventListener('click', musicPlay);
+			}</script>
+	</head>
 	<body onload="essentials()">
 		<header>Spider</header>
+
+		<audio id="spider" loop autoplay>
+   			 <source src="sounds/spiderBackground.wav" type="audio/wav">
+		</audio>
 
 		<aside class="leftInv">Machete: <span id="machete"></span><br>Torch: <span id="torch"></span><br>GrappleHook: <span id="hook"></span><br>Explosives: <span id="explosive"></span></aside>
 
 		<p id="dialogBox"> You can finally see what looks like an opening coming up after what felt like hours of crawling through the tiny hole.<br> You come out to a place somehow covered in more cobwebs than yourself...</p>
 
 		<aside class="rightInv"> Coins: <br><span id="money"></span> </aside>
+
 
 		<h2 class="karma"> Karma : <span id="karmabar"></span> </h2>
 		<h2 class="health"> Health : <span id="healthbar"></span> </h2>

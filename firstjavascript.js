@@ -259,14 +259,16 @@ function approachHouse(){
 function enterBasement(){
 	alert("You enter the basement!");
 	document.getElementById("dialogBox").innerHTML = "The basement is old and rotten and relativly empty. There is a unusual light in the corner of the room, unusual because it is the only sign anyone has been here at all recently. ";
-	document.getElementById("button2").innerHTML = "Investigate the light"
+	document.getElementById("button2").innerHTML = "Investigate the light";
 	button2deep = investigateLight;
 	document.body.style.backgroundImage = "url(images/basement.jpg)";
 	document.getElementById("header").innerHTML = "Basement";
 }
 
 function investigateLight(){
-	document.getElementById("dialogBox").innerHTML = "The light is next to anold painting that seems to be squint on the wall. You go to straighten it and it falls from the wall revealing a tunnel beind it.";
+	var audio = new Audio("sounds/paintingFall.wav");
+	audio.play();
+	document.getElementById("dialogBox").innerHTML = "The light is next to an old painting that seems to be squint on the wall. You go to straighten it and it falls from the wall revealing a tunnel beind it.";
 	document.getElementById("button2").innerHTML = "Go into tunnel";
 	button2deep = travelTunnel;
 }
@@ -274,7 +276,7 @@ function investigateLight(){
 function travelTunnel(){
 	torch = localStorage.getItem("torch");
 	if (torch == "true"){
-		alert("You're crawling through the tunnel for a little while when the floor starts to give away and suddenly you're falling... You get up luckily uninjured in a cold dark cave, you begin walking.")
+		alert("You're crawling through the tunnel for a little while when the floor starts to give away and suddenly you're falling... You get up luckily uninjured in a cold dark cave, you begin walking.");
 		location.href='cave.html';
 	}
 	else
@@ -285,6 +287,8 @@ function travelTunnel(){
 
 function enterHouse(){
 	alert("You enter the house!");
+	var audio = new Audio("sounds/opendoor.wav");
+	audio.play();
 	document.getElementById("dialogBox").innerHTML = "The house is old and abandoned it doesn't look like anyone is living here.";
 	document.getElementById("button2").innerHTML = "Search the house";
 	button2deep = searchHouse;
@@ -320,7 +324,7 @@ function searchHouse(){
 	}
 	else
 	{
-		alert("You have already searched the house!")
+		alert("You have already searched the house!");
 	}
 }
 
@@ -332,6 +336,8 @@ function killTraveller(){
 	var traveller = localStorage.getItem("traveller");
 	if (traveller == 'false'){
 		traveller = "true";
+		var audio = new Audio("sounds/stab.mp3");
+		audio.play();
 		localStorage.setItem("traveller", traveller);
 		var linebreak = document.createElement("br");
 		document.getElementById("dialogBox").innerHTML = "You plunge your sword into man without a second thought and take all he had... ";
@@ -425,7 +431,7 @@ function waitCampsite(){
 	var a = document.createTextNode("Unknown: Please I mean no harm take what you want and leave.");
 	document.getElementById("dialogBox").appendChild(a);
 	button2cliff = nothing;
-	button3cliff = cliffResponse
+	button3cliff = cliffResponse;
 	button4cliff = nothing;
 	document.getElementById("button3").innerHTML="Respond";
 
@@ -464,6 +470,8 @@ function helpJeff(){
 
 function killJeff(){
 	document.getElementById("dialogBox").innerHTML="*You take Jeff to the cliff where you climbed up as he is looking at the grappling hook you stab him straight through the back. You take all his coins from his corpse.*";
+	var audio = new Audio("sounds/stab.mp3");
+	audio.play();
 	var coins = parseInt(localStorage.getItem("num_coins"));
 	localStorage.setItem("num_coins", (coins + 15));
 	var karma = parseInt(localStorage.getItem("karma_points"));
@@ -535,6 +543,8 @@ function blockcave(){
 }
 function attackcave(){
 	if (tall == "stunned"){
+		var audio = new Audio("sounds/stab.mp3");
+		audio.play();
 		document.getElementById("dialogBox").innerHTML="You lunge at the figure as it lays on the ground pointing your sword infront of you as you do straight into its neck...";
 		var linebreak = document.createElement("br");
 		document.getElementById("dialogBox").appendChild(linebreak);
@@ -578,6 +588,8 @@ function dodgecave(){
 		document.getElementById("dialogBox").innerHTML="You quickly move out of the way of the attack resulting in the figure running into the wall and falling over...";
 		var linebreak = document.createElement("br");
 		document.getElementById("dialogBox").appendChild(linebreak);
+		var audio = new Audio("sounds/tallwall.wav");
+		audio.play();
 		alert("*The monster seems stunned*");
 		var b = document.createTextNode("What do you do?");
 		document.getElementById("dialogBox").appendChild(b);
@@ -608,10 +620,12 @@ function godeeper(){
 }
 
 function nothing(){
-	alert("You cannot do this")
+	alert("You cannot do this");
 }
 
 function killChildren(){
+	var audio = new Audio("sounds/bad.mp3");
+		audio.play();
 	document.getElementById("dialogBox").innerHTML="You stop and stare for a minute considering your options. The thought of your child comes to your head filling you with rage... you draw your sword  and brutally murder each and every one of them. Some of them try to fight back scratching and kicking while the others try to run. Unfotunatly for them they had nowhere to go...";
 	karma = parseInt(localStorage.getItem("karma_points"));
 	health = parseInt(localStorage.getItem("health_points"));
@@ -628,6 +642,8 @@ function killChildren(){
 }
 
 function leaveChildren(){
+	var audio = new Audio("sounds/good.mp3");
+		audio.play();
 	document.getElementById("dialogBox").innerHTML="You stop and stare for a minute considering your options. The thought of your own child comes to your head... you turn your back to them and leave them be.";
 	karma = parseInt(localStorage.getItem("karma_points"));
 	localStorage.setItem("karma_points", (karma + 1));
@@ -651,7 +667,7 @@ var button3lava;
 var button4lava;
 
 function goBack(){
-	location.href='cave.html'
+	location.href='cave.html';
 }
 function rock(){
 	var explosive = localStorage.getItem("explosive");
@@ -662,7 +678,7 @@ function rock(){
 	else
 	{
 		alert("WARNING: AFTER THIS PART OF THE GAME YOU CAN NO LONGER GO BACK");
-		alert("You set the explosives... once the smoke clears something else is in the way!")
+		alert("You set the explosives... once the smoke clears something else is in the way!");
 		document.getElementById("dialogBox").innerHTML = "It's the rock! Only this time it has a face and looks angry... It sprouts its legs now seeming almost double the size and begins swinging its massive baseball bat like arm in your direction!(You're the ball)";
 		document.getElementById("button2").innerHTML = "Block";
 		document.getElementById("button3").innerHTML = "Attack";
@@ -701,14 +717,14 @@ function wakeUp(){
 
 function seachLava(){
 	document.getElementById("dialogBox").innerHTML = "There doesnt seem to be much of anyhting around you except a small hole in the wall maybe 20 metres away. Only problem is its 20 metres of molten lava!";
-	document.getElementById("button1").innerHTML = "Use grappling hook!"
+	document.getElementById("button1").innerHTML = "Use grappling hook!";
 	button1lava = useGrapple;
 }
 
 function useGrapple(){
 	var grapple = localStorage.getItem("grapple");
 	if (grapple == "true"){
-		alert("You swing your grappling hook and throw it towards the hole in the wall, luckily it catches on to a ledge just above it.")
+		alert("You swing your grappling hook and throw it towards the hole in the wall, luckily it catches on to a ledge just above it.");
 		document.getElementById("dialogBox").innerHTML = "You slowly pull yourself and the platform over to the hole, switching to other small platforms where appropiate. Once you're there you see its covered in cobwebs and can't see much at all through it. ";
 		document.getElementById("button2").innerHTML = "Climb into hole";
 		document.getElementById("button3").innerHTML = "";
@@ -748,8 +764,8 @@ var button3spider;
 var button4spider;
 
 function searchSpider(){
-	document.getElementById("dialogBox").innerHTML = "Looking around the room you cant see much, theres a light at the bottom thankfully it looks like sunlight and not lava. Thats not all... theres bones everywhere, human bones! Everywhere you look its all you can see..."
-	document.getElementById("button1").innerHTML = "Walk towards the light..."
+	document.getElementById("dialogBox").innerHTML = "Looking around the room you cant see much, theres a light at the bottom thankfully it looks like sunlight and not lava. Thats not all... theres bones everywhere, human bones! Everywhere you look its all you can see...";
+	document.getElementById("button1").innerHTML = "Walk towards the light...";
 	button1spider = walkSpider;
 }
 
@@ -759,6 +775,8 @@ function walkSpider(){
 	document.getElementById("dialogBox").appendChild(linebreak);
 	var a = document.createTextNode("Suddenly almost silently you see a massive spider coming from the ceiling, it breaks off from its web slamming to the floor infront of you it... ");
 	document.getElementById("dialogBox").appendChild(a);
+	var audio = new Audio("sounds/spider.wav");
+	audio.play();
 	document.getElementById("button1").innerHTML = "ATTACK";
 	button1spider = initialAttack;
 }
@@ -980,17 +998,17 @@ function whoTemple5(){
 function whatTemple(){
 	var linebreak = document.createElement("br");
 	document.getElementById("dialogBox").innerHTML = "Me: What is this place!";
-	document.getElementById("dialogBox").appendChild(linebreak)
+	document.getElementById("dialogBox").appendChild(linebreak);
 	var b = document.createTextNode("Unknown: Thats not important, it is important how you got here...");
 	document.getElementById("dialogBox").appendChild(b);
 	document.getElementById("button2").innerHTML = "Whats that supossed to mean!";
-	button2temple = whatTemple2
+	button2temple = whatTemple2;
 }
 
 function whatTemple2(){
 	var linebreak = document.createElement("br");
 	document.getElementById("dialogBox").innerHTML = "Me: Whats that supposed to mean!";
-	document.getElementById("dialogBox").appendChild(linebreak)
+	document.getElementById("dialogBox").appendChild(linebreak);
 	var b = document.createTextNode("Unknown: What it means is we've been watching closely and know what kind of a person you really are.");
 	document.getElementById("dialogBox").appendChild(b);
 	document.getElementById("button2").innerHTML = "";
@@ -1001,11 +1019,11 @@ function whatTemple2(){
 function whereTemple(){
 	var linebreak = document.createElement("br");
 	document.getElementById("dialogBox").innerHTML = "Me: Do you know where my child is!";
-	document.getElementById("dialogBox").appendChild(linebreak)
+	document.getElementById("dialogBox").appendChild(linebreak);
 	var b = document.createTextNode("Unknown: I know where he will be");
 	document.getElementById("dialogBox").appendChild(b);
 	document.getElementById("button3").innerHTML = "WHERE!";
-	button3temple = whereTemple2
+	button3temple = whereTemple2;
 
 }
 
@@ -1034,7 +1052,7 @@ function howTemple(){
 
 function endGame(){
 	alert("You drink from the water...");
-	karma = parseInt(localStorage.getItem("karma_points"))
+	karma = parseInt(localStorage.getItem("karma_points"));
 	if (karma < 0) {
 		location.href = "badEnding.html";
 	}

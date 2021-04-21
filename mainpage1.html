@@ -4,9 +4,26 @@
 		<link rel="stylesheet" type="text/css" href="homescreen.css">
 		<script src="firstjavascript.js"></script>
 		<title>Home Screen </title>
+		<script>
+			document.addEventListener('click', musicPlay);
+			function musicPlay() {
+    			document.getElementById('rain').play();
+    			document.getElementById('thunder').play();
+    			document.removeEventListener('click', musicPlay);
+			}
+		</script>
 	</head>
 	<body onload="essentials()">
 		<header>Campsite</header>
+
+
+		<audio id="rain" loop autoplay>
+   			 <source src="sounds/rain.wav" type="audio/wav">
+		</audio>
+		<audio id="thunder" loop autoplay>
+   			 <source src="sounds/thunder.wav" type="audio/wav">
+		</audio>
+
 
 		<aside class="leftInv">Machete: <span id="machete"></span><br>Torch: <span id="torch"></span><br>GrappleHook: <span id="hook"></span><br>Explosives: <span id="explosive"></span></aside>
 
