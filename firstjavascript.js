@@ -221,7 +221,7 @@ if (machete == 'false'){
 	document.getElementById("dialogBox").innerHTML="You're going to need something other than your sword, sharp enough to cut through all this vegitation!";
 	document.getElementById("dialogBox").appendChild(linebreak);
 }else{
-	location.href='deepForest.html';
+	location.href='deepforest.html';
 }
 }
 
